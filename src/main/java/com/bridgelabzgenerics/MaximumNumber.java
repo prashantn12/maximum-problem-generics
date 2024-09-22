@@ -8,7 +8,7 @@ public class MaximumNumber<T extends Comparable<T>> {
             throw new IllegalArgumentException("Array is empty");
         }
 
-        T max = elements[0];
+        T max = elements[0]; // Assume the first element is the largest initially
 
         for (T element : elements) {
             if (element.compareTo(max) > 0) {
@@ -17,15 +17,6 @@ public class MaximumNumber<T extends Comparable<T>> {
         }
 
         return max;
-    }
-
-    public static void main(String[] args) {
-        MaximumNumber<Integer> maximum = new MaximumNumber<>();
-
-        Integer[] array1 = {10, 20, 30};
-
-        System.out.println("Maximum of " + maximum.findMaximum(array1)); // 30
-
     }
 }
 
