@@ -1,47 +1,39 @@
 package com.bridgelabzgenerics;
 
 
+
 import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 
 public class MaximumNumberTest {
 
-    // Test Case 1.1: Max String at First Position
+    // Test case for finding max Integer
     @Test
-    public void givenMaxStringAtFirstPosition_ShouldReturnSameString() {
-        MaximumNumber<String> maximumNumber = new MaximumNumber<>();
+    public void givenIntegers_ShouldReturnMaximumInteger() {
+        MaximumNumber<Integer> maximumNumber = new MaximumNumber<>();
 
-        // Test data with max string at the first position
-        String[] testData = {"Peach", "Apple", "Banana"};  // Peach is the lexicographically largest
-
-        String result = maximumNumber.findMaximum(testData);
-
-        assertEquals("Test case failed! Expected max at 1st position is Peach", "Peach", result);
+        // Test for integers
+        Integer result = maximumNumber.findMaximum(100, 20, 30);  // Max is 100
+        assertEquals("Expected max integer is 100", (Integer) 100, result);
     }
 
-    // Test Case 1.2: Max String at Second Position
+    // Test case for finding max Float
     @Test
-    public void givenMaxStringAtSecondPosition_ShouldReturnSameString() {
-        MaximumNumber<String> maximumNumber = new MaximumNumber<>();
+    public void givenFloats_ShouldReturnMaximumFloat() {
+        MaximumNumber<Float> maximumNumber = new MaximumNumber<>();
 
-        // Test data with max string at the second position
-        String[] testData = {"Apple", "Peach", "Banana"};  // Peach is the max string at second position
-
-        String result = maximumNumber.findMaximum(testData);
-
-        assertEquals("Test case failed! Expected max at 2nd position is Peach", "Peach", result);
+        // Test for floats
+        Float result = maximumNumber.findMaximum(20.5f, 30.2f, 100.5f);  // Max is 100.5
+        assertEquals("Expected max float is 100.5", (Float) 100.5f, result);
     }
 
-    // Test Case 1.3: Max String at Third Position
+    // Test case for finding max String
     @Test
-    public void givenMaxStringAtThirdPosition_ShouldReturnSameString() {
+    public void givenStrings_ShouldReturnMaximumString() {
         MaximumNumber<String> maximumNumber = new MaximumNumber<>();
 
-        // Test data with max string at the third position
-        String[] testData = {"Apple", "Banana", "Peach"};  // Peach is the max string at third position
-
-        String result = maximumNumber.findMaximum(testData);
-
-        assertEquals("Test case failed! Expected max at 3rd position is Peach", "Peach", result);
+        // Test for strings
+        String result = maximumNumber.findMaximum("Apple", "Peach", "Banana");  // Max is "Peach"
+        assertEquals("Expected max string is Peach", "Peach", result);
     }
 }
