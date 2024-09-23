@@ -1,5 +1,6 @@
 package com.bridgelabzgenerics;
 
+
 import java.util.Arrays;
 import java.util.Collections;
 
@@ -12,9 +13,11 @@ public class MaximumNumber<T extends Comparable<T>> {
         this.elements = elements;
     }
 
-    // Instance method to find the maximum of instance variables
+    // Instance method to find and print the maximum of instance variables
     public T testMaximum() {
-        return MaximumNumber.testMaximum(elements);
+        T maxValue = MaximumNumber.testMaximum(elements);
+        printMax(maxValue);
+        return maxValue;
     }
 
     // Static method to find the maximum of more than three elements
@@ -29,6 +32,11 @@ public class MaximumNumber<T extends Comparable<T>> {
 
         // The maximum element will be the first element after sorting
         return elements[0];
+    }
+
+    // Generic method to print the maximum value
+    public void printMax(T maxValue) {
+        System.out.println("The maximum value is: " + maxValue);
     }
 }
 
