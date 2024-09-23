@@ -1,39 +1,34 @@
 package com.bridgelabzgenerics;
 
-
-
 import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 
 public class MaximumNumberTest {
 
-    // Test case for finding max Integer
+    // Test case for finding max Integer using the generic class
     @Test
-    public void givenIntegers_ShouldReturnMaximumInteger() {
-        MaximumNumber<Integer> maximumNumber = new MaximumNumber<>();
+    public void givenThreeIntegers_ShouldReturnMaximumInteger() {
+        MaximumNumber<Integer> maximumNumber = new MaximumNumber<>(10, 20, 30);
 
-        // Test for integers
-        Integer result = maximumNumber.findMaximum(100, 20, 30);  // Max is 100
-        assertEquals("Expected max integer is 100", (Integer) 100, result);
+        Integer result = maximumNumber.testMaximum();  // Max is 30
+        assertEquals("Expected max integer is 30", (Integer) 30, result);
     }
 
-    // Test case for finding max Float
+    // Test case for finding max Float using the generic class
     @Test
-    public void givenFloats_ShouldReturnMaximumFloat() {
-        MaximumNumber<Float> maximumNumber = new MaximumNumber<>();
+    public void givenThreeFloats_ShouldReturnMaximumFloat() {
+        MaximumNumber<Float> maximumNumber = new MaximumNumber<>(10.5f, 30.5f, 20.5f);
 
-        // Test for floats
-        Float result = maximumNumber.findMaximum(20.5f, 30.2f, 100.5f);  // Max is 100.5
-        assertEquals("Expected max float is 100.5", (Float) 100.5f, result);
+        Float result = maximumNumber.testMaximum();  // Max is 30.5
+        assertEquals("Expected max float is 30.5", (Float) 30.5f, result);
     }
 
-    // Test case for finding max String
+    // Test case for finding max String using the generic class
     @Test
-    public void givenStrings_ShouldReturnMaximumString() {
-        MaximumNumber<String> maximumNumber = new MaximumNumber<>();
+    public void givenThreeStrings_ShouldReturnMaximumString() {
+        MaximumNumber<String> maximumNumber = new MaximumNumber<>("Apple", "Peach", "Banana");
 
-        // Test for strings
-        String result = maximumNumber.findMaximum("Apple", "Peach", "Banana");  // Max is "Peach"
+        String result = maximumNumber.testMaximum();  // Max is "Peach"
         assertEquals("Expected max string is Peach", "Peach", result);
     }
 }
