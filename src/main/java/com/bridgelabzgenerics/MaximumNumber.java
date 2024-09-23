@@ -2,7 +2,7 @@ package com.bridgelabzgenerics;
 
 public class MaximumNumber<T extends Comparable<T>> {
 
-    // Method to find maximum in an array of numbers
+    // Method to find maximum in an array of elements
     public T findMaximum(T[] elements) {
         if (elements.length == 0) {
             throw new IllegalArgumentException("Array is empty");
@@ -19,4 +19,3 @@ public class MaximumNumber<T extends Comparable<T>> {
         return max;
     }
 }
-
